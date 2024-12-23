@@ -1,0 +1,141 @@
+/* Général */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 50px;
+    font-size: 2rem;
+}
+
+/* Conteneur principal des produits */
+.product-container {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.product-table th,
+.product-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.product-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+.product-table td img {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+}
+
+/* Bouton Modifier */
+.modify-button {
+    padding: 8px 12px;
+    background-color: #28a745;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+/* Boîte de confirmation */
+.confirmation-dialog {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.confirmation-dialog button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.confirmation-dialog button#confirm-yes {
+    background-color: #4CAF50;
+}
+
+.confirmation-dialog button:hover {
+    opacity: 0.8;
+}
+
+.supp-button {
+    padding: 8px 12px;
+    background-color: red;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.add-image-button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.add-image-button:hover {
+    background-color: darkorange;
+}
+
+
+.modify-button:hover {
+    background-color: #218838;
+}
+
+.modify-button:active {
+    background-color: #1e7e34;
+}
+.supp-button{
+    background-color: red;
+}
+.supp-button:active{
+    background-color: red;
+}
+/* Pour rendre le tableau responsive */
+@media screen and (max-width: 768px) {
+    .product-table {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .product-table th,
+    .product-table td {
+        padding: 8px;
+    }
+}

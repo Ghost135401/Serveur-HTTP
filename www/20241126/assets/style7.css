@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    padding: 20px 0;
+}
+
+.form-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-container input, .form-container textarea, .form-container button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-container button {
+    background-color: #5cb85c;
+    color: white;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #4cae4c;
+}
+
+.category-list {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.category-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.category-list th, .category-list td {
+    padding: 10px;
+    text-align: left;
+}
+
+.category-list th {
+    background-color: #f4f4f4;
+}
+
+.category-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.category-list a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.category-list a:hover {
+    text-decoration: underline;
+}
+
+.message {
+    color: green;
+    text-align: center;
+    font-weight: bold;
+}

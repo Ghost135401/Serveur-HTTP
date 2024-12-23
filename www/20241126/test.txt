@@ -1,0 +1,21 @@
+-- Insertion des produits pour la catégorie "Men"
+INSERT INTO produit (nom, note, prix, categorie, image_url)
+VALUES
+    ('T-shirt Homme', 4, 19.99, 'Men', 'assets/images/men-01.jpg'),
+    ('Pantalon Homme', 5, 39.99, 'Men', 'assets/images/men-02.jpg'),
+    ('Chaussures Homme', 3, 59.99, 'Men', 'assets/images/men-03.jpg');
+-- Insertion des produits pour la catégorie "Women"
+INSERT INTO produit (nom, note, prix, categorie, image_url)
+VALUES
+    ('Robe Femme', 5, 49.99, 'Women', 'assets/images/instagram-01.jpg'),
+    ('Jeans Femme', 4, 39.99, 'Women', 'assets/images/instagram-02.jpg'),
+    ('Escarpins Femme', 4, 79.99, 'Women', 'assets/images/instagram-03.jpg'),
+    ('Manteau Femme', 4, 99.99, 'Women', 'assets/images/instagram-04.jpg'),
+    ('Sac à main Femme', 5, 129.99, 'Women', 'assets/images/instagram-05.jpg');
+
+-- Insertion des produits pour la catégorie "Enfants"
+INSERT INTO produit (nom, note, prix, categorie, image_url)
+VALUES
+    ('T-shirt Enfant', 5, 14.99, 'Enfants', 'assets/images/kid-01.jpg'),
+    ('Short Enfant', 4, 18.99, 'Enfants', 'assets/images/kid-02.jpg'),
+    ('Chaussures Enfant', 3, 22.99, 'Enfants', 'assets/images/kid-03.jpg');

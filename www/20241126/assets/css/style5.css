@@ -1,0 +1,72 @@
+/* Conteneur principal */
+.search-container {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Titre */
+.search-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Formulaire en Flexbox */
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Groupes de champs */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 calc(25% - 10px); /* 4 champs alignés sur une ligne */
+    min-width: 150px; /* Taille minimale pour éviter un écrasement */
+}
+
+/* Champs */
+.search-form input[type="text"],
+.search-form input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Bouton */
+.search-form button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex: 1 1 100%; /* Le bouton occupe toute la largeur en dessous des champs */
+    margin-top: 10px;
+}
+
+.search-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .form-group {
+        flex: 1 1 100%; /* Champs alignés en colonne sur les petits écrans */
+    }
+
+    .search-form button {
+        margin-top: 20px;
+    }
+}

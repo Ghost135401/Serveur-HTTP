@@ -1,0 +1,55 @@
+<?php
+
+include "../inc/fonction.php";
+if (isset($_POST['submit'])) {
+    $nom = $_POST['nom'];
+    $note = isset($_POST['note']) ? $_POST['note'] : null;
+    $prix = $_POST['prix'];
+    $categorie = $_POST['categorie'];
+    
+    if (isset($_FILES['image']) && $_FILES['image']['error'] == UPLOAD_ERR_OK) {
+        $imageTmpPath = $_FILES['image']['tmp_name'];
+        $imageName = basename($_FILES['image']['name']);
+        
+        // Chemin de destination pour l'image
+        $imageDestinationPath = '../assets/images/' . $imageName; // Utilisation de chemin relatif
+        $im='assets/images/' . $imageName;
+
+        // Vérifier si le répertoire existe, sinon le créer
+        if (!is_dir('../assets/images')) {
+            if (!mkdir('../assets/images', 0777, true)) {
+                die("Erreur lors de la création du répertoire.");
+            }
+        }
+
+        // Déplacer le fichier téléchargé dans le répertoire assets/images
+        if (move_uploaded_file($imageTmpPath, $imageDestinationPath)) {
+            $imageUrl = $im;
+        } else {
+            die("Erreur lors du téléchargement de l'image.");
+        }
+    } else {
+        die("Aucune image sélectionnée ou erreur de téléchargement.");
+    }
+
+    // Connexion à la base de données et insertion du produit
+    $pdo = connectToDatabase();
+    try {
+        $stmt = $pdo->prepare("INSERT INTO produit (nom, note, prix, categorie, image_url) 
+                               VALUES (:nom, :note, :prix, :categorie, :image_url)");
+        $stmt->execute([
+            ':nom' => $nom,
+            ':note' => $note,
+            ':prix' => $prix,
+            ':categorie' => $categorie,
+            ':image_url' => $imageUrl
+        ]);
+
+        echo "Produit ajouté avec succès!";
+        header("Location: ajouter.php");
+        exit;
+    } catch (PDOException $e) {
+        die("Erreur lors de l'ajout du produit : " . $e->getMessage());
+    }
+}
+?>
